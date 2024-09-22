@@ -1,0 +1,21 @@
+<div class="row mt-4 ms-3">
+  <div *ngFor="let product of products" class="col-md-4 mb-4">
+    <div class="card" style="width: 18rem;">
+      <img [src]="apiBaseUrl + product.imageURL" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+        <p class="card-text">${{ product.price }}</p>
+        <div class="d-flex justify-content-between">
+          <a [routerLink]="['/products', product.productID]" class="btn btn-primary">View Details</a>
+          <button type="button" class="btn btn-outline-dark">
+            <i class="bi bi-cart"></i>
+          </button>
+          <button type="button" class="btn btn-outline-dark">
+            <i class="bi bi-heart"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
